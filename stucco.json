@@ -1,0 +1,69 @@
+{
+    "resolvers": {
+        "Query.search": {
+            "resolve": {
+                "name": "lib/Query/search"
+            }
+        },
+        "PublicMutation.login": {
+            "resolve": {
+                "name": "lib/PublicMutation/login"
+            }
+        },
+        "PublicMutation.validateOtp": {
+            "resolve": {
+                "name": "lib/PublicMutation/validateOtp"
+            }
+        },
+        "UserMutation.postQuestion": {
+            "resolve": {
+                "name": "lib/UserMutation/postQuestion"
+            }
+        },
+        "UserMutation.postAnswer": {
+            "resolve": {
+                "name": "lib/UserMutation/postAnswer"
+            }
+        },
+        "UserMutation.vote": {
+            "resolve": {
+                "name": "lib/UserMutation/vote"
+            }
+        },
+        "Mutation.user": {
+            "resolve": {
+                "name": "lib/Mutation/user"
+            }
+        },
+        "Mutation.public": {
+            "resolve": {
+                "name": "lib/Mutation/public"
+            }
+        },
+        "Query.question": {
+            "resolve": {
+                "name": "lib/Query/question"
+            }
+        },
+        "Question.answers": {
+            "resolve": {
+                "name": "lib/Question/answers"
+            }
+        },
+        "Question.user": {
+            "resolve": {
+                "name": "lib/Question/user"
+            }
+        },
+        "Answer.user": {
+            "resolve": {
+                "name": "lib/Answer/user"
+            }
+        },
+        "Answer.answers": {
+            "resolve": {
+                "name": "lib/Answer/answers"
+            }
+        }
+    }
+}

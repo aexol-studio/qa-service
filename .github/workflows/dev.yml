@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: >
+          npm install
+          npx graphql-editor-cli deploy 
+            -e MONGO_URL=$MONGO_URL 
+            -e JWT_SECRET=$JWT_SECRET 
+            -e TWILIO_ACCOUNT=$TWILIO_ACCOUNT 
+            -e TWILIO_TOKEN=$TWILIO_TOKEN 
+            -e TWILLIO_SERVICE_ID=$TWILLIO_SERVICE_ID
+        env:
+          MONGO_URL: ${{secrets.MONGO_URL}}
+          JWT_SECRET: ${{secrets.JWT_SECRET}}
+          TWILIO_ACCOUNT: ${{secrets.TWILIO_ACCOUNT}}
+          TWILIO_TOKEN: ${{secrets.TWILIO_TOKEN}}
+          TWILIO_SERVICE_ID: ${{secrets.TWILIO_SERVICE_ID}}
+          GRAPHQL_EDITOR_TOKEN: ${{secrets.GRAPHQL_EDITOR_TOKEN}}
