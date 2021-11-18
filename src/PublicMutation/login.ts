@@ -26,7 +26,7 @@ export const handler = async (input: FieldResolveInput) =>
       }
       //send otp
       const result = await twilio.verify
-        .services(process.env.TWILLIO_SERVICE_ID!)
+        .services(process.env.TWILIO_SERVICE_ID!)
         .verifications.create({ to: args.login.phone, channel: 'sms' })
         .then((verification) => verification.status === 'pending')
         .catch((e) => console.error('Problem with sending otp occurred: ', e));

@@ -19,7 +19,7 @@ jobs:
           -e JWT_SECRET=$JWT_SECRET 
           -e TWILIO_ACCOUNT=$TWILIO_ACCOUNT 
           -e TWILIO_TOKEN=$TWILIO_TOKEN 
-          -e TWILLIO_SERVICE_ID=$TWILLIO_SERVICE_ID
+          -e TWILIO_SERVICE_ID=$TWILIO_SERVICE_ID
         env:
           MONGO_URL: ${{secrets.MONGO_URL}}
           JWT_SECRET: ${{secrets.JWT_SECRET}}

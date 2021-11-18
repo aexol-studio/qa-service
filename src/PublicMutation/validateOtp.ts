@@ -12,7 +12,7 @@ export const handler = async (input: FieldResolveInput) =>
   resolverFor('PublicMutation', 'validateOtp', async ({ validateOTP: { otp, phone } }) => {
     if (phone !== '+48123456789' && otp !== '1111') {
       //otp verification
-      const verification = await twilio.verify.services(process.env.TWILLIO_SERVICE_ID!).verificationChecks.create({
+      const verification = await twilio.verify.services(process.env.TWILIO_SERVICE_ID!).verificationChecks.create({
         code: otp,
         to: phone,
       });
